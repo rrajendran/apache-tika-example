@@ -1,6 +1,7 @@
 package com.capella.apache.tika;
 
 import org.hamcrest.CoreMatchers;
+import org.junit.Test;
 
 import java.io.InputStream;
 import java.util.Map;
@@ -12,7 +13,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
  */
 public class MetadataParserTest {
 
-    @org.junit.Test
+    @Test
     public void testGetMetaData() {
         InputStream inputStream = MetadataParserTest.class.getClassLoader().getResourceAsStream("poi.doc");
         Map<String, Object> meatadata = MetadataParser.getMeatadata(inputStream);
