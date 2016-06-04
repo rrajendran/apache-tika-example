@@ -21,11 +21,12 @@ import java.util.TreeMap;
  */
 public class MetadataParser {
 
-    public static Map<String, Object> getMeatadata(InputStream inputStream) {
+    public static Map<String, Object> getMetadata(InputStream inputStream, String fileName) {
         Parser parser = new AutoDetectParser();
 
         ContentHandler handler = new BodyContentHandler();
         Metadata metadata = new Metadata();
+        metadata.add(Metadata.RESOURCE_NAME_KEY, fileName);
         Map<String, Object> metadataMap = new TreeMap<String, Object>();
         try {
             parser.parse(inputStream, handler, metadata, new ParseContext());

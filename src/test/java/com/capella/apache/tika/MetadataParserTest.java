@@ -1,5 +1,6 @@
 package com.capella.apache.tika;
 
+import org.apache.tika.metadata.Metadata;
 import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
@@ -16,7 +17,7 @@ public class MetadataParserTest {
     @Test
     public void testGetMetaData() {
         InputStream inputStream = MetadataParserTest.class.getClassLoader().getResourceAsStream("poi.doc");
-        Map<String, Object> meatadata = MetadataParser.getMeatadata(inputStream);
-        assertThat(meatadata.get("Content-Type"), CoreMatchers.<Object>is("application/msword"));
+        Map<String, Object> meatadata = MetadataParser.getMetadata(inputStream,"poi.doc");
+        assertThat(meatadata.get(Metadata.CONTENT_TYPE), CoreMatchers.<Object>is("application/msword"));
     }
 }
