@@ -6,7 +6,7 @@
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <apache-tika.version>1.12</apache-tika.version>
+        <apache-tika.version>1.15</apache-tika.version>
         <junit.version>4.12</junit.version>
     </properties>
     <name>apache-tika-example</name>
@@ -21,7 +21,54 @@
             <groupId>org.apache.tika</groupId>
             <artifactId>tika-parsers</artifactId>
             <version>${apache-tika.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>sentiment-analysis-parser</artifactId>
+                    <groupId>edu.usc.ir</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>vorbis-java-tika</artifactId>
+                    <groupId>org.gagravarr</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jackcess-encrypt</artifactId>
+                    <groupId>com.healthmarketscience.jackcess</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>httpclient</artifactId>
+                    <groupId>org.apache.httpcomponents</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>rome</artifactId>
+                    <groupId>com.rometools</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>quartz</artifactId>
+                    <groupId>org.quartz-scheduler</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>ehcache-core</artifactId>
+                    <groupId>net.sf.ehcache</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>netcdf4</artifactId>
+                    <groupId>edu.ucar</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>grib</artifactId>
+                    <groupId>edu.ucar</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>cdm</artifactId>
+                    <groupId>edu.ucar</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>httpservices</artifactId>
+                    <groupId>edu.ucar</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

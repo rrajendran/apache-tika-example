@@ -21,6 +21,7 @@ import java.util.TreeMap;
  */
 public class MetadataParser {
 
+
     public static Map<String, Object> getMetadata(InputStream inputStream, String fileName) {
         Parser parser = new AutoDetectParser();
 
